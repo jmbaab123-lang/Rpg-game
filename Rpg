@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>RPG Retro: Edición Corregida</title>
+    <style>
+        /* ESTILOS GENERALES */
+        body {
+            background-color: #1a1a1a;
+            color: #eee;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden; /* Evita barras de desplazamiento */
+            user-select: none; /* Evita seleccionar texto al hacer clic */
+        }
+
+        /* MENÚ DE SELECCIÓN (Visible al inicio) */
+        #character-select {
+            background: #222;
+            padding: 30px;
+            border: 4px solid #fff;
+            text-align: center;
+            display: flex; /* Flex para centrar */
+            flex-direction: column;
+            gap: 15px;
+            z-index: 100;
+            box-shadow: 0 0 50px rgba(0,0,0,0.8);
+        }
+
+        h1, h3 { margin: 5px 0; text-shadow: 2px 2px #000; }
+        h1 { color: gold; }
+
+        /* BOTONES */
+        button {
+            background: #000;
+            color: #fff;
+            border: 2px solid #666;
+            padding: 12px 20px;
+            margin: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        button:hover { 
+            background: #444; 
+            border-color: #fff;
+            transform: scale(1.05); /* Efecto zoom ligero */
+        }
+        /* Clase para el botón seleccionado */
+        .selected { 
+            background: #eee; 
+            color: #000; 
+            border-color: gold; 
+            box-shadow: 0 0 10px gold;
+        }
+
+        /* PANTALLA DE JUEGO (Oculta al inicio) */
+        #game-container {
+            display: none; 
+            flex-direction: column;
+            align-items: center;
+            width: 600px;
+        }
+
+        canvas {
+            background-color: #000;
+            border: 4px solid #888;
+            box-shadow: 0 0 20px #000;
+            margin-bottom: 5px;
+        }
+
+        /* INTERFAZ DE ABAJO (Log y Stats) */
+        #ui-panel {
+            width: 600px;
+            height: 180px;
+            background: #111;
+            border: 4px solid #fff;
+            padding: 10px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #log {
+            width: 5
